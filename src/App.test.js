@@ -35,3 +35,13 @@ test("that user can type a confirmed password", () => {
   userEvent.type(confirmedInput, 'password123!');
   expect(confirmedInput.value).toBe('password123!');
 });
+
+test("an error message is shown when the user types invalid email", () => {
+  render(<App />);
+  const emailInput = screen.getByRole('textbox', {name: /email/i});
+  userEvent.type(emailInput, 'katianchcom');
+  const submitBut = screen.getByRole('button', {name: /submit/i});
+  userEvent.click(submitBut);
+  const emailError = screen.getByText(/invalid email/i);
+  expect(emailError).toBeInTheDocument();
+})
