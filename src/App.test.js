@@ -38,10 +38,11 @@ test("that user can type a confirmed password", () => {
 
 test("an error message is shown when the user types invalid email", () => {
   render(<App />);
+  const emailError = screen.queryByText(/invalid email/i);
   const emailInput = screen.getByRole('textbox', {name: /email/i});
-  userEvent.type(emailInput, 'katianchcom');
   const submitBut = screen.getByRole('button', {name: /submit/i});
+  expect(emailError).not.toBeInTheDocument();
+  userEvent.type(emailInput, 'katianchcom');
   userEvent.click(submitBut);
-  const emailError = screen.getByText(/invalid email/i);
   expect(emailError).toBeInTheDocument();
 })
