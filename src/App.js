@@ -16,13 +16,24 @@ function App() {
           />
         </div>
         <div className='mb-3'>
-          <label htmlFor='email' className='form-label'>
+          <label htmlFor='password' className='form-label'>
             Password
           </label>
           <input
             type="password"
             id="password"
             name="password"
+            className='form-control'
+          />
+        </div>
+        <div className='mb-3'>
+          <label htmlFor='confirm-pass' className='form-label'>
+            Confirm Password
+          </label>
+          <input
+            type="password"
+            id="confirm-pass"
+            name="confirm-pass"
             className='form-control'
           />
         </div>

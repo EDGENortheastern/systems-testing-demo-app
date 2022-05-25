@@ -10,4 +10,5 @@ test("initial inputs are empty", ()=>{
   const confirmInput = screen.getByLabelText(/confirm password/i);
   expect(emailInput.value).toBe('');
   expect(passInput.value).toBe('');
+  expect(confirmInput.value).toBe('');
 })
