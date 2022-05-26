@@ -46,4 +46,42 @@ test("an error message is shown when the user types invalid email", () => {
   userEvent.click(submitBut);
   emailError = screen.queryByText(/invalid email/i); // reassign after error
   expect(emailError).toBeInTheDocument();
-})
+});
+
+test("length check for password", () => {
+  render(<App />);
+  const emailInput = screen.getByRole('textbox', {name: /email/i});
+  let passError = screen.queryByText(
+    /the password should be longer than 5 characters/i
+  );
+  const passInput = screen.getByLabelText("Password");
+  const submitBut = screen.getByRole('button', {name: /submit/i});
+  userEvent.type(emailInput, 'katia@nch.org');
+  expect(passError).not.toBeInTheDocument();
+  userEvent.type(passInput, '123');
+  userEvent.click(submitBut);
+  passError = screen.queryByText(
+    /the password should be longer than 4 characters/i
+  );
+  expect(passError).toBeInTheDocument();
+});
+
+test("password and confirm password match", () => {
+  render(<App />);
+  const emailInput = screen.getByRole('textbox', {name: /email/i});
+  let confirmError = screen.queryByText(
+    /the password does not match. try again/i
+  );
+  const passInput = screen.getByLabelText("Password");
+  const submitBut = screen.getByRole('button', {name: /submit/i});
+  const confirmInput = screen.getByLabelText(/confirm password/i);
+  userEvent.type(emailInput, 'katia@nch.org');
+  userEvent.type(passInput, '12345');
+  expect(confirmError).not.toBeInTheDocument();
+  userEvent.type(confirmInput, '123456');
+  userEvent.click(submitBut);
+  confirmError = screen.queryByText(
+    /the password does not match. try again/i
+  );
+  expect(confirmError).toBeInTheDocument();
+});
