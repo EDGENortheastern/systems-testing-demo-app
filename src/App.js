@@ -27,7 +27,7 @@ function App() {
       return setError("The password should be longer than 4 characters");
     } else if (signupInput.password !== signupInput.confirmPassword){
       return setError("The password does not match. Try again");
-a    }
+    }
   }
 
   return (
