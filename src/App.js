@@ -24,7 +24,9 @@ function App() {
     if(!validator.isEmail(signupInput.email)){
       return setError("Invalid email");
     } else if (signupInput.password.length < 5){
-      return setError("The password should be longer than 5 characters");
+      return setError("The password should be longer than 4 characters");
+    } else if (signupInput.password !== signupInput.confirmPassword){
+      return setError("The password does not match. Try again");
     }
   }
 
