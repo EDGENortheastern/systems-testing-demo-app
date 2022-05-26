@@ -46,4 +46,22 @@ test("an error message is shown when the user types invalid email", () => {
   userEvent.click(submitBut);
   emailError = screen.queryByText(/invalid email/i); // reassign after error
   expect(emailError).toBeInTheDocument();
-})
+});
+
+test("length check for password", () => {
+  render(<App />);
+  const emailInput = screen.getByRole('textbox', {name: /email/i});
+  let passError = screen.queryByText(
+    /the password should be longer than 5 characters/i
+  );
+  const passInput = screen.getByLabelText("Password");
+  const submitBut = screen.getByRole('button', {name: /submit/i});
+  userEvent.type(emailInput, 'katia@nch.org');
+  expect(passError).not.toBeInTheDocument();
+  userEvent.type(passInput, '123');
+  userEvent.click(submitBut);
+  passError = screen.queryByText(
+    /the password should be longer than 5 characters/i
+  );
+  expect(passError).toBeInTheDocument();
+});
