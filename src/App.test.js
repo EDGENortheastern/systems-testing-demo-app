@@ -44,6 +44,6 @@ test("an error message is shown when the user types invalid email", () => {
   expect(emailError).not.toBeInTheDocument();
   userEvent.type(emailInput, 'katianchcom');
   userEvent.click(submitBut);
-  emailError = screen.queryByText(/invalid email/i);
+  emailError = screen.queryByText(/invalid email/i); // reassign after error
   expect(emailError).toBeInTheDocument();
 })
