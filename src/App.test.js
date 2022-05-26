@@ -85,3 +85,25 @@ test("password and confirm password match", () => {
   );
   expect(confirmError).toBeInTheDocument();
 });
+
+test("when passwords match and validate and so does the email", () => {
+  render(<App />);
+  const emailInput = screen.getByRole('textbox', {name: /email/i});
+  const passInput = screen.getByLabelText("Password");
+  const confirmInput = screen.getByLabelText(/confirm password/i);
+  const submitBut = screen.getByRole('button', {name: /submit/i});
+  const emailError = screen.queryByText(/invalid email/i);
+  const passError = screen.queryByText(
+    /the password should be longer than 5 characters/i
+  );
+  const confirmError = screen.queryByText(
+    /the password does not match. try again/i
+  );
+  userEvent.type(emailInput, 'katia@nch.org');
+  userEvent.type(passInput, '12345');
+  userEvent.type(confirmInput, '12345');
+  userEvent.click(submitBut);
+  expect(emailError).not.toBeInTheDocument();
+  expect(passError).not.toBeInTheDocument();
+  expect(confirmError).not.toBeInTheDocument();
+})
