@@ -19,7 +19,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## To run project locally:
 
 ```bash
-git clone lala
+git clone git@github.com:EDGENortheastern/systems-testing-demo-app.git
 ```
 
 In the project directory, you can run:
