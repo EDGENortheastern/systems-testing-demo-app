@@ -4,15 +4,14 @@ The live app is [here](https://reliable-trifle-855414.netlify.app/).
 
 It is a simple form. There are no right and wrong answers.
 
-1. Try testing thhe form using manual test testing log (attached).
-
-2. Try re-running automated tests.
 
 ## Systems Testing at [NCH](https://www.nchlondon.ac.uk/): Introduction to manual and automated testing.
 
 ### The task:
 
-Test the form using manual testing. To do so please **make a copy** of the fo
+1. Test the form using manual testing. To do so please **make a copy** of the test log [template](https://docs.google.com/spreadsheets/d/12qnD9U7rQKxIK5UhhZpKYJ9FjIV1dnBg/edit#gid=1510390888).
+2. Either re-run tests on remote or clone and run tests locally. Have a look inside test files.
+3. **That is all!**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
