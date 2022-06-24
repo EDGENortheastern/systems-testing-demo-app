@@ -21,6 +21,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 git clone git@github.com:EDGENortheastern/systems-testing-demo-app.git
 ```
 
+Install modules needed for running tests locally.
+
+```bash
+npm install
+```
+
 In the project directory, you can run:
 
 ### `npm start`
