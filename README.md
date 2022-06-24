@@ -24,18 +24,18 @@ git clone git@github.com:EDGENortheastern/systems-testing-demo-app.git
 Install modules needed for running tests locally.
 
 ```bash
-npm install
+yarn install
 ```
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `npm test`
+### `yarn test`
 
 Launches the test runner in the interactive watch mode.
 
