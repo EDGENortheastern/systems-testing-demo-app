@@ -18,7 +18,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The recommended tech stack to explore the project locally is:
 
 [VSCode](https://code.visualstudio.com/)
+
 [Node]([https://code.visualstudio.com/](https://nodejs.org/en/)
+
 [Yarn](https://yarnpkg.com/)
 
 ## To run and test project locally:
